@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<string.h>
+main(){
+int i=0,j,k,len,minch=0,flag=0;
+char stri[100];
+printf("enter string\n");
+scanf("%s",stri);
+len=strlen(stri);
+j=len-1;
+while(i<j)
+{
+  if(stri(i)==stri(j))
+  {
+    i++;
+    j--;
+    flag=1;
+  }
+  else
+  {
+    i++;
+    flag=0;
+  }
+ }
+ if(flag==0)
+ {
+    minch=len-1;
+    k=minch-1;
+    printf("min characters required to make a string palindrome:%d\n",minch);
+    for(i=0;i<minch;i++)
+    {
+      stri[len+i]=stri[k--];
+      stri[len+i]='\0';
+      printf("string palindrome:%s\n",stri);
+    }
+  }
+}
